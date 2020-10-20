@@ -46,6 +46,16 @@ class spam_cog(commands.Cog):
             await ctx.message.delete()
             print ("Sent Message")
             await asyncio.sleep(60)
+            
+    @commands.command(pass_context=True)
+    async def bump(self, ctx):
+        await ctx.message.delete()
+        print ("-stop to stop")
+        print ("Action Started: AutoBump")
+        for i in range(9999):
+            await ctx.send("!d bump")
+            print ("Sent bump command")
+            await asyncio.sleep(7224)
 
     @commands.command(pass_context=True)
     async def spam(self, ctx, arg1):

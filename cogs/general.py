@@ -62,7 +62,7 @@ class general_cog(commands.Cog):
 
     @commands.command(pass_context=True)
     async def streaming(self, ctx, *, arg1:str):
-        await self.bot.change_presence(activity = discord.Streaming(name = arg1, url = "https://twitch.tv/pornhub"))
+        await self.bot.change_presence(activity = discord.Streaming(name = arg1, url = "https://www.youtube.com/watch?v=q-Y0bnx6Ndw"))
         await ctx.message.delete()
 
     @commands.command(pass_context=True)

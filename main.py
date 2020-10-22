@@ -20,7 +20,6 @@ from discord.ext.commands import Bot
 from config import version, changelog
 start_time = datetime.datetime.utcnow()
 
-url = 'https://raw.githubusercontent.com/DwifteJB/dwifte.py/master/update.json'
 req = urllib.request.Request(url)
 r = urllib.request.urlopen(req).read()
 cont = json.loads(r.decode('utf-8'))
@@ -44,16 +43,6 @@ bot.remove_command("help")
 @bot.event
 async def on_connect():
   print (f'Dwifte.PY {version}\nLogged in as: {bot.user}\nCurrent Prefix: {prefix}\nMade by CrafterPika and DwifteJB')
-  latestver = cont['latest']
-  if latestver == version:
-      pass
-  else:
-      features = cont['features']
-      print (f"Update {latestver} is available!\nFeatures: {features}\n Download at: github.com/DwifteJB/dwifte.py")
-      try:
-          sys.exit()
-      except:
-          os._exit(1)
 
 #Bot Events
 @bot.event
